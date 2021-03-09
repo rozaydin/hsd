@@ -261,7 +261,7 @@ describe('Wallet HTTP', function() {
     });
 
     // wait for tx event on mempool
-    await common.event(node.mempool, 'tx');
+    // await common.event(node.mempool, 'tx');
 
     const mempool = await nclient.getMempool();
 

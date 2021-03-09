@@ -336,12 +336,12 @@ describe('HTTP', function() {
 
     const raw = mtx.toHex();
     const txid = await nclient.execute('sendrawtransaction', [raw]);
-
     const json = await nclient.get(`/mempool/invalid/${txid}`);
     assert.equal(json.invalid, true);
 
     const filterInfo = await nclient.get('/mempool/invalid');
     assert.equal(filterInfo.entries, 1);
+    
   });
 
   it('should generate 10 blocks from RPC call', async () => {
